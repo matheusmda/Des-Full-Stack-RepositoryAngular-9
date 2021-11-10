@@ -1,0 +1,21 @@
+<mat-card>
+    <mat-card-title>{{titulo}}</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome Hospede" name="nmHospede" [(ngModel)]="hospede.nmHospede"> 
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="CPF" name="cpf" [(ngModel)]="hospede.cpf">
+        </mat-form-field>
+        <mat-form-field class="datepicker">
+            <mat-label>Data de nascimento</mat-label>
+            <input matInput [matDatepicker] = "picker" placeholder="Data Nascimento" name="dtNascimento" [(ngModel)]="hospede.dtNascimento">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+    </form>
+
+    <button mat-raised-button color="primary" class="button-new" (click)="salvar()">Cadastrar</button>
+    <button mat-raised-button color="warn" class="button-new" routerLink="/hospedes/">Cancelar</button>
+
+</mat-card>
